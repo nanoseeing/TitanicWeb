@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>タイタニック号の生存確率予測</title>
+</head>
+
+<body>
+    <h1>タイタニック号の生存確率予測</h1>
+    <form action="/index" method="POST">
+        <p>
+            Name:
+            <input type="text" name="name" placeholder="Mr.titanic" maxlength=20 required>
+        </p>
+        <p>
+            Pclass:
+            <select name="pclass">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </p>
+        <p>
+            Sex:
+            <select name="sex">
+                <option value="male">male</option>
+                <option value="female">female</option>
+            </select>
+        </p>
+        <p>
+            Age:
+            <input type="text" name="age_1" pattern="\d*" placeholder="0" maxlength=3 required>.
+            <input type="text" name="age_2" pattern="\d*" placeholder="0" maxlength=3 required>
+        </p>
+        <p>
+            SibSp:
+            <input type="number" name="sibsp" min="0" max="99" step="1" placeholder="0" required>
+        </p>
+        <p>
+            Parch:
+            <input type="number" name="parch" min="0" max="99" step="1" placeholder="0" required>
+        </p>
+        <p>
+            Ticket:
+            <input type="text" name="ticket" placeholder="T123456" maxlength=10 required>
+        </p>
+        <p>
+            Fare:
+            <input type="text" name="fare_1" pattern="\d*" placeholder="0" maxlength=3 required>.
+            <input type="text" name="fare_2" pattern="\d*" placeholder="0" maxlength=10 required>
+        </p>
+        <p>
+            Cabin:
+            <input type="text" name="cabin" placeholder="C123456" maxlength=10 required>
+        </p>
+        <p>
+            Embarked:
+            <select name="embarked">
+                <option value="C">C</option>
+                <option value="Q">Q</option>
+                <option value="S">S</option>
+            </select>
+        </p>
+        <input type="submit" value="Submit">
+    </form>
+    <p>
+        {% if ypred %}<b>生存確率:{{ypred}}%</b>
+        {% endif %}
+    </p>
+    <hr>
+</body>
+
+</html>
